@@ -9,9 +9,9 @@ Usage is as follows.
 ```javascript
 // simple-vrt.config.mjs
 export default {
-  expectedImagePath: './img/expect.png', // expected image directory
-  actualImagePath: './img/actual.png', // directory of actual image
-  diffImagePath: './img/diff.png', // directory of diff image
+  expectedImagePath: './simple-vrt/img/expect.png', // expected image directory
+  actualImagePath: './simple-vrt/img/actual.png', // directory of actual image
+  diffImagePath: './simple-vrt/img/diff.png', // directory of diff image
   targetUrl: 'http://localhost:3000', // URL of the test target
   viewport: { // screen size of the test target
     width: 1920,
