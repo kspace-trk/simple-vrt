@@ -9,19 +9,19 @@ const main = async () => {
   const page = await browser.newPage()
   await page.goto(simpleVrtConfig.targetUrl)
   await page.setViewport(simpleVrtConfig.viewport)
-  await page.screenshot({ path: simpleVrtConfig.screenshotFileName })
+  await page.screenshot({ path: simpleVrtConfig.actualImagePath })
   const res = await looksSame.createDiff({
-    reference: simpleVrtConfig.expect,
-    current: simpleVrtConfig.screenshotFileName,
-    diff: simpleVrtConfig.diffFileName,
+    reference: simpleVrtConfig.expectImagePath,
+    current: simpleVrtConfig.actualImagePath,
+    diff: simpleVrtConfig.diffImagePath,
     strict: false,
     tolerance: 50,
   })
-  const result = await looksSame(simpleVrtConfig.expect, simpleVrtConfig.screenshotFileName)
+  const result = await looksSame(simpleVrtConfig.expectImagePath, simpleVrtConfig.actualImagePath)
   if (result.equal) {
     console.log(colorizeText("Test passed", "32"))
   } else {
-    console.error(colorizeText("Test failed. Exported difference files to " + simpleVrtConfig.diffFileName, "31"))
+    console.error(colorizeText("Test failed. Exported difference files to " + simpleVrtConfig.diffImagePath, "31"))
   }
   await browser.close()
 }
