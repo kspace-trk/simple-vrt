@@ -17,8 +17,7 @@ const main = async () => {
     strict: false,
     tolerance: 50,
   })
-  const result = await looksSame(simpleVrtConfig.expectImagePath, simpleVrtConfig.actualImagePath)
-  if (result.equal) {
+  if (res.equal) {
     console.log(colorizeText("Test passed", "32"))
   } else {
     console.error(colorizeText("Test failed. Exported difference files to " + simpleVrtConfig.diffImagePath, "31"))

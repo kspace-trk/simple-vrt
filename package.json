@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "looks-same": "^8.2.1",
+    "looks-same": "github:kspace-trk/looks-same#add-equal-option-to-createDiff",
     "puppeteer": "^21.1.1"
   },
   "devDependencies": {
