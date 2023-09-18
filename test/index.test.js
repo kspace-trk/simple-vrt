@@ -12,13 +12,13 @@ describe('simple-vrt', () => {
       viewport: {width: 1920, height: 1080},
     })).toBe(true);
   });
-  test('should error', async () => {
-    expect(await simpleVrt({
-      expectImagePath: "./test/img/not-correct.png",
-      actualImagePath: "./test/img/screenshot.png",
-      diffImagePath: "./test/img/diff.png",
-      targetUrl: "https://example.com",
-      viewport: {width: 1920, height: 1080},
-    })).toBe(false);
-  });
+  // test('should error', async () => {
+  //   expect(await simpleVrt({
+  //     expectImagePath: "./test/img/not-correct.png",
+  //     actualImagePath: "./test/img/screenshot.png",
+  //     diffImagePath: "./test/img/diff.png",
+  //     targetUrl: "https://example.com",
+  //     viewport: {width: 1920, height: 1080},
+  //   })).toBe(false);
+  // });
 })

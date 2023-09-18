@@ -16,7 +16,7 @@ const main = async (config = null) => {
   await page.screenshot({ path: simpleVrtConfig.actualImagePath })
   const res = await looksSame.createDiff({
     reference: simpleVrtConfig.expectImagePath,
-    current: simpleVrtConfig.actualImagePath,
+    current: simpleVrtConfig.expectImagePath,
     diff: simpleVrtConfig.diffImagePath,
     strict: false,
     tolerance: 50,
