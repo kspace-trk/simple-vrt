@@ -2,9 +2,13 @@
 
 import looksSame from 'looks-same'
 import puppeteer from 'puppeteer'
-import simpleVrtConfig from '../../simple-vrt.config.mjs'
+import simpleVrtConfig from '../../simple-vrt/simple-vrt.config.mjs'
 
-const main = async () => {
+const main = async (config = null) => {
+  let response = false
+  if (config) {
+    simpleVrtConfig = config
+  }
   const browser = await puppeteer.launch({headless: 'new'})
   const page = await browser.newPage()
   await page.goto(simpleVrtConfig.targetUrl)
@@ -19,10 +23,13 @@ const main = async () => {
   })
   if (res.equal) {
     console.log(colorizeText("Test passed", "32"))
+    response = true
   } else {
     console.error(colorizeText("Test failed. Exported difference files to " + simpleVrtConfig.diffImagePath, "31"))
+    response = false
   }
   await browser.close()
+  return response
 }
 
 const colorizeText =(text, colorCode) => {
