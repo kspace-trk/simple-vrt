@@ -2,24 +2,25 @@
   "name": "simple-vrt",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.mjs",
   "scripts": {
-    "test": "vitest"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "looks-same": "github:kspace-trk/looks-same#add-equal-option-to-createDiff",
-    "puppeteer": "^21.1.1",
-    "vitest": "^0.34.4"
+    "puppeteer": "^21.1.1"
   },
   "devDependencies": {
-    "@types/node": "^20.6.0"
+    "@types/node": "^20.6.0",
+    "jest": "^29.7.0"
   },
   "bin": {
-    "simple-vrt": "./src/index.mjs"
+    "simple-vrt": "./index.mjs"
   },
   "workspaces": [
+    "simple-vrt",
     "packages/simple-vrt"
   ]
 }
